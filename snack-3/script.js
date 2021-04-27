@@ -1,27 +1,7 @@
 // Snack 3
 // Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
 // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri. Usiamo i nuovi metodi degli array foreach o filter.
-
-//// Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
-// const numeri = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-// console.log(numeri);
-// function numbersInBetween(numbersArray, number1, number2) {
-//     const numbersBetweenNumbers = [];
-//     const startingNumber = number1;
-//     const endingNumber = number2;
-//     for (let i = 0; i < numbersArray.lenght; i++) {
-//         const value = numbersArray[i];
-//         if (value > startingNumber && value < endingNumber) {
-//             numbersBetweenNumbers.push(value);
-//             startingNumber += 1;
-//         }
-//     }
-//     return numbersBetweenNumbers;
-// }
-// console.log(numbersInBetween(numeri, 3, 8));
-//uso filter()
 const numbers = [2, 34, 15, 65, 56];
-
 function indexInbeetween(array, startIndex, endIndex) {
     return array.filter(function (element, index) {
         if (index >= startIndex && index <= endIndex) {
@@ -33,13 +13,35 @@ function indexInbeetween(array, startIndex, endIndex) {
 }
 console.log(indexInbeetween(numbers, 1, 2));
 //uso ciclo forEach
-function indexForEachInBetween(array, startIndex, endIndex){
+function indexForEachInBetween(array, startIndex, endIndex) {
     const numbersInNewArray = [];
-    array.forEach(function (element, index){
-        if(index >= startIndex && index <= endIndex){
+    array.forEach(function (element, index) {
+        if (index >= startIndex && index <= endIndex) {
             numbersInNewArray.push(element);
         }
     });
     return numbersInNewArray;
 }
 console.log(indexForEachInBetween(numbers, 1, 2));
+//PROVO A FARE QUELLO CHE AVEVO CAPITO INZIALMENTE - RIMANDARE NUMERI COMPRESI COME VALORE FRA DUE NUMERI a e b, con a < b
+
+// Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+
+//ero partita con una funzione normale per poi ragionare su filter/forEach
+const numeri = [1, 7, 8, 9, 2, 3, 4, 5, 6];
+console.log(numeri);
+
+function numbersInBetween(numbersArray, number1, number2) {
+    const numbersBetweenNumbers = [];
+    const startingNumber = number1;
+    const endingNumber = number2;
+    for (let i = 0; i < numbersArray.length; i++) {
+        const value = numbersArray[i];
+        if (value >= startingNumber && value <= endingNumber) {
+            numbersBetweenNumbers.push(value);
+        }
+    }
+    return numbersBetweenNumbers;
+}
+console.log(numbersInBetween(numeri, 3,9));
+
