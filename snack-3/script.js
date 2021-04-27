@@ -33,4 +33,13 @@ function indexInbeetween(array, startIndex, endIndex) {
 }
 console.log(indexInbeetween(numbers, 1, 2));
 //uso ciclo forEach
-// function indexForEachInBetween();
+function indexForEachInBetween(array, startIndex, endIndex){
+    const numbersInNewArray = [];
+    array.forEach(function (element, index){
+        if(index >= startIndex && index <= endIndex){
+            numbersInNewArray.push(element);
+        }
+    });
+    return numbersInNewArray;
+}
+console.log(indexForEachInBetween(numbers, 1, 2));
